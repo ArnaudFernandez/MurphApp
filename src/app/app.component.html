@@ -1,0 +1,41 @@
+<mat-drawer-container class="container mat-app-background" autosize>
+
+  <mat-drawer #drawer  class="sidenav" mode="side">
+    <h2>
+      <mat-icon>directions_run</mat-icon>
+      Murph App
+    </h2>
+
+    <mat-list>
+      <mat-list-item routerLink="tracker"><mat-icon mat-list-icon>check_circle_outline</mat-icon>  Tracker</mat-list-item>
+      <mat-list-item routerLink="stats"><mat-icon mat-list-icon>trending_up</mat-icon>  Stats</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item routerLink="help"><mat-icon mat-list-icon>help_outline</mat-icon>  Help</mat-list-item>
+    </mat-list>
+
+  </mat-drawer>
+
+  <mat-toolbar color="primary" class="mat-toolbar mat-elevation-z3">
+    <mat-toolbar-row>
+      <a style="cursor : pointer"(click)="drawer.toggle()" class="material-icons">
+        <mat-icon>menu</mat-icon>
+      </a>
+
+      <a routerLink="tracker" class="material-icons appLogo">
+        directions_run
+      </a>
+      <div>
+        <h1>MurphApp</h1>
+      </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+      <div class="centered">
+        <h1>{{currentPageTitle}}</h1>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+
+  <router-outlet></router-outlet>
+</mat-drawer-container>

@@ -1,0 +1,64 @@
+.header {
+    height: 80px;
+}
+
+.appLogo {
+    font-size: 2.5em;
+    margin: 10px;
+}
+
+mat-drawer-container {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color : #FFFFFF;
+}
+
+mat-toolbar {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 100%;
+}
+
+.categoryToolbar {
+    z-index: -99;
+    text-align: center;
+    align-content: center;
+}
+
+.centered {
+    margin: auto;
+}
+
+mat-toolbar-row {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 16px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+}
+
+mat-list-item {
+    cursor : pointer;
+}
+
+.sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidenav {
+    padding: 20px;
+}
+
+.mat-list-icon {
+    color: rgba(0, 0, 0, 0.54);
+
+}
