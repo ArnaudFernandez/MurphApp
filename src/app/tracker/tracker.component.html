@@ -1,1 +1,38 @@
-<p>tracker works!</p>
+
+<h2>Current progression | {{dateText}}</h2>
+
+<mat-grid-list cols="6" rowHeight="350px">
+    <mat-grid-tile
+            *ngFor="let workout of workouts"
+            [colspan]="workout.cols"
+            [rowspan]="workout.rows"
+            [style.background]="workout.color">
+        <mat-grid-tile-header>
+            <div class="title">
+                {{workout.title}}
+            </div>
+        </mat-grid-tile-header>
+
+
+        <mat-progress-spinner
+                class="example-margin"
+                [color]="color"
+                [mode]="mode"
+                [value]="progressBarValue(workout.title)"
+                strokeWidth="30"
+                diameter="200"
+        >
+        </mat-progress-spinner>
+        <br/>
+        <div style="position: absolute; font-weight: bold">{{workout.currentStatus}} / {{workout.objective}}</div>
+
+        <mat-grid-tile-footer>
+            <mat-form-field>
+                <label>
+                    <input [(ngModel)]="workout.valueInput" matInput (keydown)="keyPressed($event, workout.valueInput, workout.title)" type="number" min="0"/>
+                </label>
+            </mat-form-field>
+            <button mat-raised-button (click)="updateWorkout(workout.title, workout.valueInput)">Add</button>
+        </mat-grid-tile-footer>
+    </mat-grid-tile>
+</mat-grid-list>

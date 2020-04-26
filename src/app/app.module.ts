@@ -11,6 +11,11 @@ import { MatToolbarModule } from '@angular/material';
 import { MatIconModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -28,7 +33,12 @@ import { MatListModule } from '@angular/material/list';
       MatToolbarModule,
       MatIconModule,
       MatSidenavModule,
-      MatListModule
+      MatListModule,
+    MatGridListModule,
+      MatProgressSpinnerModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

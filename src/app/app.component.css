@@ -11,6 +11,10 @@ mat-drawer-container {
     height: 100%;
 }
 
+mat-drawer {
+    width: 250px;
+}
+
 a {
     text-decoration: none;
     color : #FFFFFF;
