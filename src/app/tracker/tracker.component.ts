@@ -67,7 +67,7 @@ export class TrackerComponent implements OnInit {
       this.workouts[i].currentStatus = 0;
       this.workouts[i].color = 'lightpink';
     } else {
-      this.workouts[i].color = 'lightpink';
+      this.workouts[i].color = 'red';
     }
   }
 
