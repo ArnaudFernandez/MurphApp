@@ -7,9 +7,11 @@ mat-grid-tile-header > .title{
 
 mat-grid-tile-header, mat-grid-tile-footer {
     background: rgba(0,0,0,0) !important;
+    align-content: center;
+    height: 90px !important;
 }
 
-h2 {
+h2, button {
     text-align: center;
     color: black;
 }
@@ -19,6 +21,14 @@ mat-form-field {
 }
 
 button {
-    padding-left : 20px;
+    padding : 15px;
+
 }
 
+.buttonContainer {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 20px;
+}

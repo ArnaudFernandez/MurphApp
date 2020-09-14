@@ -25,7 +25,7 @@ export class TrackerComponent implements OnInit {
   currentDate = new Date();
   dateText;
 
-  @ViewChild('valueInput') valueInput: ElementRef;
+  //@ViewChild('valueInput')private _valueInput: ElementRef;
 
 
   constructor(private datePipe: DatePipe) {
@@ -49,18 +49,25 @@ export class TrackerComponent implements OnInit {
    * @param input -> Number to increment in the training
    */
   updateWorkout(titleWorkout: string, input: number) {
+
+    // We increment / decrement the targeted workout
     let i = 0;
     for (i = 0; i < this.workouts.length; i++) {
       if (this.workouts[i].title === titleWorkout) {
           this.workouts[i].currentStatus += input;
-          this.workouts[i].valueInput = '';
+          this.workouts[i]._valueInput = '';
           break;
       }
     }
-
+    // We check if we're not getting to high or too low and ackground color's changing if we finished !
     if (this.workouts[i].currentStatus >= this.workouts[i].objective) {
       this.workouts[i].currentStatus = this.workouts[i].objective;
       this.workouts[i].color = 'lightgreen';
+    } else if (this.workouts[i].currentStatus < 0) {
+      this.workouts[i].currentStatus = 0;
+      this.workouts[i].color = 'lightpink';
+    } else {
+      this.workouts[i].color = 'lightpink';
     }
   }
 

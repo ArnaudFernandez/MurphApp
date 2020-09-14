@@ -1,7 +1,7 @@
 
 <h2>Current progression | {{dateText}}</h2>
 
-<mat-grid-list cols="6" rowHeight="350px">
+<mat-grid-list cols="6" rowHeight="400px">
     <mat-grid-tile
             *ngFor="let workout of workouts"
             [colspan]="workout.cols"
@@ -27,12 +27,21 @@
         <div style="position: absolute; font-weight: bold">{{workout.currentStatus}} / {{workout.objective}}</div>
 
         <mat-grid-tile-footer>
-            <mat-form-field>
+            <!--mat-form-field>
                 <label>
                     <input [(ngModel)]="workout.valueInput" matInput (keydown)="keyPressed($event, workout.valueInput, workout.title)" type="number" min="0"/>
                 </label>
-            </mat-form-field>
-            <button mat-raised-button (click)="updateWorkout(workout.title, workout.valueInput)">Add</button>
+            </mat-form-field-->
+            <div class="buttonContainer">
+                <button mat-button (click)="updateWorkout(workout.title, 0)">Reset</button>
+                <button mat-button (click)="updateWorkout(workout.title, -10)">-10</button>
+                <button mat-button (click)="updateWorkout(workout.title, -5)">-5</button>
+                <button mat-button (click)="updateWorkout(workout.title, -1)">-1</button>
+                <button mat-button (click)="updateWorkout(workout.title, 1)">+1</button>
+                <button mat-button (click)="updateWorkout(workout.title, 5)">+5</button>
+                <button mat-button (click)="updateWorkout(workout.title, 10)">+10</button>
+                <button mat-button (click)="updateWorkout(workout.title, 50)">+50</button>
+            </div>
         </mat-grid-tile-footer>
     </mat-grid-tile>
 </mat-grid-list>
